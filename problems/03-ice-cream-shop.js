@@ -16,12 +16,12 @@ iceCreamShop([], 'honey lavender'); // false
 // your code here
 function iceCreamShop(flavors, favorite) {
   if (flavors.length === 0) {
-    return;
+    return false;
   }
-  // if (favorite === flavors[flavors.length - 1]) {
-  //   return true;
-  // }
-  return favorite === iceCreamShop(flavors.pop());
+  if (favorite === flavors[flavors.length - 1]) {
+    return true;
+  }
+  return iceCreamShop(flavors.slice(0, flavors.length - 1), favorite);
 };
 
 console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
