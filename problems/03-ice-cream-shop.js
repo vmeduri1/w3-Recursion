@@ -12,7 +12,6 @@ iceCreamShop(['moose tracks'], 'moose tracks'); // true
 iceCreamShop([], 'honey lavender'); // false
 ***********************************************************************/
 
-
 // your code here
 function iceCreamShop(flavors, favorite) {
   if (flavors.length === 0) {
@@ -20,15 +19,30 @@ function iceCreamShop(flavors, favorite) {
   }
   if (favorite === flavors[flavors.length - 1]) {
     return true;
+  } else {
+    return iceCreamShop(flavors.slice(0, flavors.length - 1), favorite);
   }
-  return iceCreamShop(flavors.slice(0, flavors.length - 1), favorite);
-};
+}
 
-console.log(iceCreamShop(['vanilla', 'strawberry'], 'blue moon')); // false
-iceCreamShop(['pistachio', 'green tea', 'chocolate', 'mint chip'], 'green tea'); // true
-iceCreamShop(['cookies n cream', 'blue moon', 'superman', 'honey lavender', 'sea salt caramel'], 'pistachio'); // false
-iceCreamShop(['moose tracks'], 'moose tracks'); // true
-iceCreamShop([], 'honey lavender'); // false
+console.log(iceCreamShop(["vanilla", "strawberry"], "blue moon")); // false
+console.log(
+  iceCreamShop(
+    ["pistachio", "green tea", "chocolate", "mint chip"],
+    "green tea"
+  )
+); // true
+iceCreamShop(
+  [
+    "cookies n cream",
+    "blue moon",
+    "superman",
+    "honey lavender",
+    "sea salt caramel",
+  ],
+  "pistachio"
+); // false
+iceCreamShop(["moose tracks"], "moose tracks"); // true
+iceCreamShop([], "honey lavender"); // false
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
