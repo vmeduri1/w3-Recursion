@@ -14,13 +14,19 @@ reverse(""); // ""
 
 // your code here
 function reverse(string) {
-  if (string.length === 0) {
+  if (string === "") {
     return "";
+  } else {
+    return reverse(string.substr(1)) + string.charAt(0);
   }
-  return reverse(string.slice())
-};
+}
+console.log(reverse("id"));
+console.log(reverse("house")); // "esuoh"
+reverse("dog"); // "god"
+reverse("atom"); // "mota"
+reverse("q"); // "q"
 
-
+reverse(""); // ""
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = reverse;
