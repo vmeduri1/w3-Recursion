@@ -13,12 +13,7 @@ reverse(""); // ""
 ***********************************************************************/
 
 // your code here
-function reverse(string) {
-  if (string.length === 0) {
-    return "";
-  }
-  return reverse(string.slice())
-};
+
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
