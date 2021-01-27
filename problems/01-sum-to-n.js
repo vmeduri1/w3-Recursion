@@ -11,7 +11,7 @@ sumToN(9)  // returns 45
 sumToN(-8)  // returns null
 ***********************************************************************/
 
-// your code here
+// your code here       
 
 function sumToN(num) {
   if (num < 0) {

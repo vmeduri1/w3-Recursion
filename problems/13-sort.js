@@ -23,7 +23,25 @@ sort([]); // []
 
 function sort(nums, sorted = []) {
   // your code here
+  if (nums.length === 0) {
+    return sorted;
+  }
+  let smallest = Infinity;
+  nums.forEach((el, i) => {
+    if (el < smallest) {
+      smallest = el;
+    }
+  });
+  // console.log(smallest);
+  sorted.push(smallest);
+  nums = nums.slice(0, nums.indexOf(smallest)).concat(nums.slice(nums.indexOf(smallest) + 1));
+  // return nums.slice(0, smallest).concat(nums.slice(nums.indexOf(smallest) + 1));
+  return sort(nums, sorted);
 }
+
+console.log(sort([4,1,6,3,1,7])); // [1, 1, 3, 4, 6, 7]
+sort([0, 1, -3]); // [-3, 0, 1]
+sort([]); // []
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
