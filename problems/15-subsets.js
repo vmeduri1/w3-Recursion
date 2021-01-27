@@ -15,7 +15,20 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
+const subsets = (array) => {
+  if (array.length === 0) {
+    return [[]];
+  }
+  let newArr = [[]];
+  array.forEach((el, i) => {
+    newArr.push([el]);
+  });
 
+  subsets(array.slice(0, -1));
+  return newArr;
+};
+
+console.log(subsets([1, 2]));
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = subsets;
